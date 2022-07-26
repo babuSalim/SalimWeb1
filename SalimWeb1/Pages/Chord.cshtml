@@ -1,0 +1,23 @@
+﻿@page
+@model SalimWeb1.Pages.ChordModel
+@{
+}
+<h1>All Chords are here</h1>
+<table style="width:50%">
+  <tr>
+    <td>ID</td>
+    <td>Song Title</td>
+    <td>Singer</td>
+    <td>Chord</td>
+  </tr>
+  @foreach(var h in Model._AllChords)
+  {
+  <tr>
+    <td>@h.id</td>
+    <td>@h.songTitle</td>
+    <td>@h.singerName</td>
+    <td><a asp-page="/AllChords/SongChord" asp-route-id="@h.id">Chord</a></td>
+  </tr>
+  }
+</table>
+<a asp-page="../Pages">Go to Index</a>
